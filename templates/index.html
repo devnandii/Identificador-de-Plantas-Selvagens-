@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador de Plantas Selvagens</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <h1>Identificador de Plantas</h1>
+                </div>
+                <p class="subtitle">Faça upload de uma foto para identificar espécies de plantas selvagens</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="app-description">
+                <div class="tech-badges">
+                    <span class="badge"><i class="fas fa-brain"></i> EfficientNet</span>
+                    <span class="badge"><i class="fas fa-eye"></i> OpenCV</span>
+                    <span class="badge"><i class="fas fa-database"></i> Plant.id API</span>
+                </div>
+                <p>Este aplicativo utiliza visão computacional e inteligência artificial para identificar espécies de plantas a partir de imagens.</p>
+            </div>
+
+            <div class="upload-section">
+                <div class="upload-card">
+                    <form id="uploadForm">
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <h3>Selecione uma imagem</h3>
+                            <p>Arraste e solte ou clique para procurar</p>
+                            <input type="file" id="imageInput" name="image" accept="image/*">
+                            
+                            <div class="file-info">
+                                <p><i class="fas fa-info-circle"></i> Formatos: JPG, PNG, WebP (max 5MB)</p>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="image-preview" id="previewSection" style="display: none;">
+                        <div class="preview-header">
+                            <h4><i class="fas fa-image"></i> Pré-visualização</h4>
+                            <button id="removeImage" class="btn-remove" type="button">
+                                <i class="fas fa-times"></i> Remover
+                            </button>
+                        </div>
+                        <div class="preview-container">
+                            <img id="previewImage" src="" alt="Pré-visualização da planta">
+                        </div>
+                        <div class="action-buttons">
+                            <button id="identifyButton" type="button" class="btn-primary">
+                                <i class="fas fa-search"></i> Identificar Planta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection">
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner-container">
+                        <div class="spinner"></div>
+                        <p>Analisando imagem...</p>
+                        <p class="loading-sub">Processando com EfficientNet e OpenCV</p>
+                    </div>
+                </div>
+                
+                <div class="plant-result" id="plantResult" style="display: none;">
+                    <!-- Resultados -->
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h3><i class="fas fa-graduation-cap"></i> Como obter melhores resultados:</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h4>Boa iluminação</h4>
+                        <p>Utilize imagens com luz natural, para capturar cores reais</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Foco nos detalhes</h4>
+                        <p>A imagem precisa ter em destaque folhas, flores ou frutos</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h4>Ângulos múltiplos</h4>
+                        <p>Se possível, inclua diferentes partes da planta</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h4>Planta inteira</h4>
+                        <p>Mostre a planta completa quando possível</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4><i class="fas fa-code"></i> Tecnologias Utilizadas</h4>
+                    <ul>
+                        <li><strong>OpenCV:</strong> Pré-processamento de imagens</li>
+                        <li><strong>EfficientNet:</strong> Extração de características</li>
+                        <li><strong>Plant.id API:</strong> Identificação de espécies</li>
+                    </ul>
+                </div>
+                <div class="api-info">
+                    <p><i class="fas fa-key"></i> Usando API gratuita do Plant.id</p>
+                    <p class="api-limit"></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><span style="color: #2e7d32;"><strong>Processamento de Imagem/Visão Computacional</strong> • Por @IrlandaOliveira<i class="fas fa-leaf"></i></span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
