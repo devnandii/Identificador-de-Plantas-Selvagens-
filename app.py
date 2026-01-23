@@ -24,7 +24,7 @@ UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Sua chave API
-PLANT_ID_API_KEY = "fb2dgnpQDHVN2abHTVuT5KE711C6jQPhPxiu11wNYD0NAPFKQA"
+PLANT_ID_API_KEY = "DPgTrInsYBW2AbTRvAeMVuX8wu0WbLDeeNLdnC6HBypztjpJFl"
 
 # ===============================
 # Carregar EfficientNet
